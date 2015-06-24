@@ -25,3 +25,16 @@ let `` A valid parameter set includes search term `` () =
     let expected = "foo"
     let params' = ParamsParser.Parse "-t foo -r bar -p d:\temp\*.config"
     Assert.Equal(expected, params'.Term)
+
+[<Fact>]
+let `` A valid parameter set includes replacement term `` () =
+    let expected = "bar"
+    let params' = ParamsParser.Parse "-t foo -r bar -p d:\temp\*.config"
+    Assert.Equal(expected, params'.Replacement)
+
+[<Fact>]
+let `` A valid parameter set includes path term `` () =
+    let expected = "d:\temp\*.config"
+    let params' = ParamsParser.Parse "-t foo -r bar -p d:\temp\*.config"
+    Assert.Equal(expected, params'.Path)
+    
