@@ -34,7 +34,6 @@ let `` A valid parameter set includes replacement term `` () =
 
 [<Fact>]
 let `` A valid parameter set includes path term `` () =
-    let expected = "d:\temp\*.config"
-    let params' = ParamsParser.Parse "-t foo -r bar -p d:\temp\*.config"
-    Assert.Equal(expected, params'.Path)
-    
+    let expected = @"d:\temp\*.config"
+    let params' = ParamsParser.Parse @"-t foo -r bar -p d:\temp\*.config"
+    Assert.Equal(expected, params'.Path)    

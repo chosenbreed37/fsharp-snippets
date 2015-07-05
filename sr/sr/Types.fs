@@ -6,3 +6,12 @@ type Params = {
     Path:string;
 }
 
+type ErrorMessage =
+    |InvalidSearchTerm
+    |InvalidReplacementTerm
+    |InvalidFilePath
+
+type Result<'T> =
+    |Success of 'T
+    |Failure of ErrorMessage
+

@@ -69,6 +69,8 @@
     <Compile Include="Tests.fs" />
     <Compile Include="ParamsParser.fs" />
     <Compile Include="ParamsParserTests.fs" />
+    <Compile Include="ParamsValidator.fs" />
+    <Compile Include="ParamsValidatorTests.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
