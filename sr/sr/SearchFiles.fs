@@ -3,11 +3,13 @@
 open System
 open System.IO
 
+open Types
+
 let getFiles path pattern =
     try
-        Directory.EnumerateFiles(path, pattern, SearchOption.AllDirectories)
+        Success (Directory.EnumerateFiles(path, pattern, SearchOption.AllDirectories))
     with
-        | :? DirectoryNotFoundException -> Seq.empty
-        | :? IOException -> Seq.empty
-        | _ -> Seq.empty
+        | :? DirectoryNotFoundException -> Failure DirectoryNotFound
+        | :? IOException -> Failure IOError
+        | _ -> Failure IOError
 

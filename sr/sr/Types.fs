@@ -11,6 +11,9 @@ type ErrorMessage =
     |InvalidReplacementTerm
     |InvalidFilePath
 
+    |DirectoryNotFound
+    |IOError
+
 type Result<'T> =
     |Success of 'T
     |Failure of ErrorMessage
