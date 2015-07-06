@@ -71,8 +71,8 @@
     <Compile Include="ParamsParserTests.fs" />
     <Compile Include="ParamsValidator.fs" />
     <Compile Include="ParamsValidatorTests.fs" />
-    <Compile Include="Program.fs" />
     <Compile Include="SearchFiles.fs" />
+    <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
