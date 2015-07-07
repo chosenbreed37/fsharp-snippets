@@ -14,12 +14,17 @@ let validateReplacementTerm input =
     else
         Success input
 
-let validateFilePath input =
-    if input.Path = "" then
-        Failure InvalidFilePath
+let validateDirectory input =
+    if input.Dir = "" then
+        Failure InvalidDirectory
     else
         Success input
 
+let validatePattern input =
+    if input.Pattern = "" then
+        Failure InvalidPattern
+    else
+        Success input
 let bind switchFunction twoTrackInput =
     match twoTrackInput with
     |Success s -> switchFunction s
@@ -32,5 +37,6 @@ let Validate input =
     input 
     |> validateSearchTerm 
     >>= validateReplacementTerm
-    >>= validateFilePath
+    >>= validateDirectory
+    >>= validatePattern
     

@@ -24,6 +24,7 @@ let Parse args =
             match h with
             |Parameter "-t" v -> Parse' { p with Term = v } t
             |Parameter "-r" v -> Parse' { p with Replacement = v } t
-            |Parameter "-p" v -> Parse' { p with Path = v.Trim() } t
+            |Parameter "-d" v -> Parse' { p with Dir = v.Trim() } t
+            |Parameter "-p" v -> Parse' { p with Pattern = v.Trim() } t
             |_ -> Parse' p t
-    Parse' { Term = ""; Replacement = ""; Path = ""; } args'
+    Parse' { Term = ""; Replacement = ""; Dir = ""; Pattern = "" } args'

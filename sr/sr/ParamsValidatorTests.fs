@@ -22,4 +22,11 @@ let `` Detects missing path `` () =
     let result = @"-t foo -r bar" |> ParamsParser.Parse |> ParamsValidator.Validate
     match result with
     |Success _ -> failwith "Validation failure expected"
-    |Failure f -> Assert.Equal(InvalidFilePath, f)
+    |Failure f -> Assert.Equal(InvalidDirectory, f)
+
+[<Fact>]
+let `` Detects missing pattern `` () =
+    let result = @"-t foo -r bar -d d:\temp" |> ParamsParser.Parse |> ParamsValidator.Validate
+    match result with
+    |Success _ -> failwith "Validation failure expected"
+    |Failure f -> Assert.Equal(InvalidPattern, f)

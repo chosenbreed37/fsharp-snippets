@@ -3,16 +3,21 @@
 type Params = {
     Term:string;
     Replacement:string;
-    Path:string;
+    Dir:string;
+    Pattern:string;    
 }
 
 type ErrorMessage =
     |InvalidSearchTerm
     |InvalidReplacementTerm
-    |InvalidFilePath
+    |InvalidDirectory
+    |InvalidPattern
 
     |DirectoryNotFound
     |IOError
+
+type SuccessMessage =
+    |Succeeded
 
 type Result<'T> =
     |Success of 'T
