@@ -10,10 +10,7 @@ open SearchFiles
 [<EntryPoint>]
 let main argv = 
     let result = 
-        String.concat " " argv 
-        |> ParamsParser.Parse 
-        |> SearchFiles.getFiles 
-        >>= SearchFiles.apply
+        argv |> String.concat " " |> ParamsParser.Parse |> SearchFiles.execute
     printfn "%A" result
     0 // return an integer exit code
         

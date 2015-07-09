@@ -44,3 +44,5 @@ let apply args =
     with
         | :? IOException -> Failure IOError
         | _ -> Failure IOError
+
+let execute args = args |> getFiles >>= apply
