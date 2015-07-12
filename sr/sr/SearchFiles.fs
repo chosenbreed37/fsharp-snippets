@@ -7,7 +7,8 @@ open Types
 
 let getFiles args =
     try
-        Success (args, Directory.EnumerateFiles(args.Dir, args.Pattern, SearchOption.AllDirectories))
+        let files = Directory.EnumerateFiles(args.Dir, args.Pattern, SearchOption.AllDirectories) |> Seq.toList
+        Success (args, files)
     with
         | :? DirectoryNotFoundException -> Failure DirectoryNotFound
         | :? IOException -> Failure IOError
@@ -38,8 +39,8 @@ let apply args =
         let files = 
             match args with
             |(_, t2) -> t2
-            |_ -> Seq.empty
-        Seq.map (fun file -> replace params'.Term params'.Replacement file >>= save file) files |> ignore
+            |_ -> List.empty
+        List.map (fun file -> replace params'.Term params'.Replacement file >>= save file) files |> ignore
         Success Succeeded
     with
         | :? IOException -> Failure IOError

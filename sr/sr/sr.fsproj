@@ -28,7 +28,7 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\sr.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>-t foo -r bar -d d:\temp -p *.config</StartArguments>
+    <StartArguments>-t foo -r bar -d c:\code\fsharp-snippets\sr\sr\tests\ -p *.txt</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
