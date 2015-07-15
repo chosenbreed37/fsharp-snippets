@@ -1,4 +1,4 @@
-﻿module SearchFiles
+﻿module SearchReplace
 
 open System
 open System.IO
@@ -33,17 +33,15 @@ let save filename text =
 let apply args =
     try
         let params' = 
-                match args with
-                |(t1, _) -> t1
-                |_ -> {Term = ""; Replacement = ""; Dir = ""; Pattern = ""}
+            match args with
+            |(t1, _) -> t1
         let files = 
             match args with
             |(_, t2) -> t2
-            |_ -> List.empty
         List.map (fun file -> replace params'.Term params'.Replacement file >>= save file) files |> ignore
         Success Succeeded
     with
         | :? IOException -> Failure IOError
         | _ -> Failure IOError
 
-let execute args = args |> getFiles >>= apply
+let Execute args = args |> getFiles >>= apply

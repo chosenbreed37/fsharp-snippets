@@ -25,13 +25,6 @@ let validatePattern input =
         Failure InvalidPattern
     else
         Success input
-let bind switchFunction twoTrackInput =
-    match twoTrackInput with
-    |Success s -> switchFunction s
-    |Failure f -> Failure f
-
-let (>>=) twoTrackInput switchFunction =
-    bind switchFunction twoTrackInput
 
 let Validate input =
     input 

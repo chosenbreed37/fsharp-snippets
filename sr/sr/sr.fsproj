@@ -66,13 +66,11 @@
     <None Include="App.config" />
     <Compile Include="Types.fs" />
     <None Include="packages.config" />
-    <Compile Include="Calculator.fs" />
-    <Compile Include="Tests.fs" />
     <Compile Include="ParamsParser.fs" />
     <Compile Include="ParamsParserTests.fs" />
     <Compile Include="ParamsValidator.fs" />
     <Compile Include="ParamsValidatorTests.fs" />
-    <Compile Include="SearchFiles.fs" />
+    <Compile Include="SearchReplace.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
   <PropertyGroup>
