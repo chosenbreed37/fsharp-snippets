@@ -28,7 +28,8 @@
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DocumentationFile>bin\Debug\sr.XML</DocumentationFile>
     <Prefer32Bit>true</Prefer32Bit>
-    <StartArguments>-t foo -r bar -d c:\code\fsharp-snippets\sr\sr\tests\ -p *.txt</StartArguments>
+    <StartArguments>-t Endpoint=sb://dcdwvwsba02.edftrading.com/MarketData-Caprice,sb://dcdwvwsba03.edftrading.com/MarketData-Caprice,sb://dcdwvwsba04.edftrading.com/MarketData-Caprice;StsEndpoint=https://dcdwvwsba02.edftrading.com:9355/MarketData-Caprice,https://dcdwvwsba03.edftrading.com:9355/MarketData-Caprice,https://dcdwvwsba04.edftrading.com:9355/MarketData-Caprice;RuntimePort=9354;ManagementPort=9355 -r Endpoint=sb://vspdevd01519.edftrading.com/Caprice;StsEndpoint=https://vspdevd01519.edftrading.com:9355/Caprice;RuntimePort=9354;ManagementPort=9355 -d "D:\TFS\EDFT\Market Data\Caprice\Service\Api\Releases\1.1\Code\" -p *.config
+</StartArguments>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>

@@ -10,7 +10,8 @@ let (|Parameter|_|) (prefix:string) (text:string) =
         None
 
 let Split args =
-    Regex.Matches(args, @"-(?'option'.)\s+(?'value'[^\s]*)")
+    //Regex.Matches(args, @"-(?'option'.)\s+(?'value'[^\s]*)") // doesn't handle spaces in file path...
+    Regex.Matches(args, @"-{1}([a-z]){1}[ ]*[a-zA-Z0-9_ :\\\*.]*")
     |> Seq.cast
     |> Seq.map (fun (x: Match) -> x.Value.Trim())
     |> Seq.toList
